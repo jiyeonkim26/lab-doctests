@@ -122,18 +122,16 @@ def max_num_4(a, b, c, d):
     4
     >>> max_num_4(10,1,2,3)
     10
-    '''
-    max_val = a
-    if b > max_val:
-        max_val = b
+    '''    
+    if a > b and a > c and a > d:
+        return a
+    elif b > a and b > c and b > d:
+        return b
+    elif c > a and c > b and c > d:
+        return c
+    else:
+        return d
     
-    if c > max_val:
-        max_val = c
-    
-    if d > max_val:
-        max_val = d
-        return max_val
-
 
 def max_num_abs(a, b):
     '''
@@ -462,16 +460,17 @@ def speeding_fine(speed, birthday):
     >>> speeding_fine(90, False)
     2000
     '''
-    speeding_fine == 0
-
+    if birthday:
+        speed -= 5
+    
     if speed <= 60:
-        return speeding_fine
+        return 0
     
-    elif speed > 60 and speed <= 80:
-        return speeding_fine + 100
+    elif speed <= 80:
+        return 100
     
-    elif speed > 80:
-        return speeding_fine + 2000
+    else: 
+        return 2000
 
 
 def near_ten(x):
@@ -571,7 +570,7 @@ def funny_sum(a, b, c):
         if values.count(v) == 1:
             total += v
 
-    return totalfunny_sum == 0
+    return total
 
 
 def median(a, b, c):
@@ -629,6 +628,8 @@ def sum_between(a, b):
 
     for i in range(start, end + 1):
         sum += i
+    
+    return sum
 
 
 
@@ -841,8 +842,9 @@ def bigger_than_10(xs):
     result = []
 
     for x in xs:
-        if x >= 10:
+        if x > 10:
             result.append(x)
+
     return len(result)
 
 
